@@ -7,9 +7,13 @@
 
     class NullHandler implements EncryptionHandlerInterface
     {
-        public function __construct(string $key)
-        { }
+        private string $key;
 
+
+        public function setKey(string $key):void
+        {
+            $this->key = $key;
+        }
 
         public function encrypt(mixed $value): string
         {
